@@ -1,6 +1,8 @@
 plugins {
+    id 'kotlin-kapt'
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -31,8 +33,19 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':common')
+    implementation project(path: ':domain')
+
+    implementation platform(Deps.firebaseBom)
+    implementation(Deps.firebaseAuth)
     //Test
     testImplementation(Deps.jUnit)
     androidTestImplementation(Deps.jUnitTestExt)
     androidTestImplementation(Deps.espressoCore)
+    //Hilt
+    implementation(Deps.hilt)
+    kapt(Deps.hiltCompiler)
+    //Lifecycle
+    implementation(Deps.lifecycleProcess)
+    implementation(Deps.coroutinesPlayServices)
 }

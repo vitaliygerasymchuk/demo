@@ -1,8 +1,10 @@
 plugins {
+    id 'kotlin-kapt'
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -38,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation project(":lib-demo")
     //Base
     implementation(Deps.androidxCore)
     implementation(Deps.appCompat)
@@ -50,6 +53,12 @@ dependencies {
     //Firebase
     implementation platform(Deps.firebaseBom)
     implementation(Deps.firebaseCrashlytics)
-    implementation(Deps.firebaseBom)
+    implementation(Deps.firebaseAnalytics)
     implementation(Deps.firebaseAuth)
+    //Hilt
+    implementation(Deps.hilt)
+    kapt(Deps.hiltCompiler)
+}
+kapt {
+    correctErrorTypes true
 }

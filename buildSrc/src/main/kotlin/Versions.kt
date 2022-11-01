@@ -7,4 +7,8 @@ object Versions {
     const val jUnitTestExt = "1.1.3"
     const val espressoCore = "3.4.0"
     const val firebaseBom = "31.0.2"
+    const val hilt = "2.44"
+    const val lifecycle = "2.5.1"
+    const val coroutinesPlayServices = "1.6.4"
+
 }
