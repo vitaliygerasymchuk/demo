@@ -14,3 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Demo"
 include ':app'
+include ':apifirebase'
+include ':domain'
+include ':apiserver'

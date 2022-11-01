@@ -1,22 +1,18 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'com.google.gms.google-services'
-    id 'com.google.firebase.crashlytics'
 }
 
 android {
-    namespace 'com.vh.demo'
+    namespace 'com.vh.apifirebase'
     compileSdk ConfigData.compileSdk
 
     defaultConfig {
-        applicationId "com.vh.demo"
         minSdk ConfigData.minSdk
         targetSdk ConfigData.targetSdk
-        versionCode AppVersion.versionCode
-        versionName AppVersion.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -24,9 +20,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-    }
-    buildFeatures {
-        viewBinding = true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -38,18 +31,8 @@ android {
 }
 
 dependencies {
-    //Base
-    implementation(Deps.androidxCore)
-    implementation(Deps.appCompat)
-    implementation(Deps.material)
-    implementation(Deps.constraintLayout)
     //Test
     testImplementation(Deps.jUnit)
     androidTestImplementation(Deps.jUnitTestExt)
     androidTestImplementation(Deps.espressoCore)
-    //Firebase
-    implementation platform(Deps.firebaseBom)
-    implementation(Deps.firebaseCrashlytics)
-    implementation(Deps.firebaseBom)
-    implementation(Deps.firebaseAuth)
 }
