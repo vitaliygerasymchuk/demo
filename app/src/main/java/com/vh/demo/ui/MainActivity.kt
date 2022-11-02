@@ -1,23 +1,20 @@
 package com.vh.demo.ui
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
-import com.vh.demo.R
+import com.vh.demo.databinding.ActivityMainBinding
+import com.vh.demo.ui.abs.AbsBindingActivity
 import com.vh.libdemo.usecase.AuthUseCase
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : AbsBindingActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 
     @Inject
     lateinit var authUseCase: AuthUseCase
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun onInitViews() {
         lifecycleScope.launch {
             authUseCase.getSessionState()
         }
