@@ -29,6 +29,11 @@ object Deps {
     const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
     const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
 
+    //Coroutines
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     const val coroutinesPlayServices =
         "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${Versions.coroutinesPlayServices}"
+
+    //Ktx
+    const val activityKtx = "androidx.activity:activity-ktx:${Versions.activityKtx}"
 }

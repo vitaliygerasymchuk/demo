@@ -33,11 +33,13 @@ android {
 }
 
 dependencies {
+    //Modules
     implementation project(path: ':common')
     implementation project(path: ':domain')
-
+    //Firebase
     implementation platform(Deps.firebaseBom)
     implementation(Deps.firebaseAuth)
+    implementation(Deps.coroutinesPlayServices)
     //Test
     testImplementation(Deps.jUnit)
     androidTestImplementation(Deps.jUnitTestExt)
@@ -45,7 +47,4 @@ dependencies {
     //Hilt
     implementation(Deps.hilt)
     kapt(Deps.hiltCompiler)
-    //Lifecycle
-    implementation(Deps.lifecycleProcess)
-    implementation(Deps.coroutinesPlayServices)
 }

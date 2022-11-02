@@ -10,5 +10,6 @@ object Versions {
     const val hilt = "2.44"
     const val lifecycle = "2.5.1"
     const val coroutinesPlayServices = "1.6.4"
-
+    const val coroutines = "1.6.4"
+    const val activityKtx = "1.6.1"
 }

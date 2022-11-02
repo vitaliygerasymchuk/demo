@@ -26,6 +26,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            applicationIdSuffix ".debug"
+        }
     }
     buildFeatures {
         viewBinding = true
@@ -58,6 +61,10 @@ dependencies {
     //Hilt
     implementation(Deps.hilt)
     kapt(Deps.hiltCompiler)
+    //Lifecycle
+    implementation(Deps.lifecycleViewModel)
+    implementation(Deps.lifecycleLiveData)
+    implementation(Deps.activityKtx)
 }
 kapt {
     correctErrorTypes true

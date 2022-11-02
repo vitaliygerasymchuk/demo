@@ -37,6 +37,7 @@ android {
 
 dependencies {
     implementation(project(":common"))
+    implementation(project(":domain"))
     implementation(project(":apifirebase"))
     //Test
     testImplementation(Deps.jUnit)
@@ -45,4 +46,8 @@ dependencies {
     //Hilt
     implementation(Deps.hilt)
     kapt(Deps.hiltCompiler)
+    //Coroutines
+    implementation(Deps.coroutines)
+    //Lifecycle
+    implementation(Deps.lifecycleProcess)
 }
